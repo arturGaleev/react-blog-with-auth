@@ -6,13 +6,16 @@ import 'scss/main.scss'
 
 import Routes from 'routes'
 import TopBar from 'components/topBar'
+import {CurrentUserProvider} from 'context/currentUser'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <TopBar />
-      <Routes />
-    </BrowserRouter>
+    <CurrentUserProvider>
+      <BrowserRouter>
+        <TopBar />
+        <Routes />
+      </BrowserRouter>
+    </CurrentUserProvider>
   )
 }
 
