@@ -7,14 +7,17 @@ import 'scss/main.scss'
 import Routes from 'routes'
 import TopBar from 'components/topBar'
 import {CurrentUserProvider} from 'context/currentUser'
+import CurrentUserChecker from 'components/currentUserChecker'
 
 const App = () => {
   return (
     <CurrentUserProvider>
-      <BrowserRouter>
-        <TopBar />
-        <Routes />
-      </BrowserRouter>
+      <CurrentUserChecker>
+        <BrowserRouter>
+          <TopBar />
+          <Routes />
+        </BrowserRouter>
+      </CurrentUserChecker>
     </CurrentUserProvider>
   )
 }
